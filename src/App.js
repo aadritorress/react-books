@@ -4,12 +4,29 @@ import React from 'react'
 
 class App extends React.Component {
 
+  state = {
+    books: []
+  }
   
+allBooks = () => {
+  console.log('all books')
+}
+
+myBooks = () => {
+  console.log('my books')
+}
+
+
+componentDidMount() {
+    
+  }
+
 
   render() 
 
+
+
     { 
-   
   return (
 
 
@@ -19,7 +36,7 @@ class App extends React.Component {
  <br></br>
  <br></br>
 <button onClick={this.allBooks}> All Books </button>
-<button> My Books  </button>
+<button onClick={this.myBooks}> My Books  </button>
     </div>
     )}
 
