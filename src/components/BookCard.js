@@ -15,7 +15,7 @@ handleClick (e) {
   render() {
 
     return (
-      <div>
+      <div  onClick={() => this.props.manageBooks(this.props.book)}>
         <h2>{this.props.book.name}</h2>
         {/* <img
           src={this.props.toy.image}

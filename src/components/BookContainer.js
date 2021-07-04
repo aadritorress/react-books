@@ -1,7 +1,7 @@
 import React from 'react';
 import BookCard from './BookCard'
 
-const BookContainer = ({books}) => {
+const BookContainer = ({books, addBook}) => {
  
   return(
     <div >
@@ -14,7 +14,7 @@ const BookContainer = ({books}) => {
       })} */}
     {books.map(book => {
 		return ( 
-	<BookCard key={book.id} book={book}/>
+	<BookCard key={book.id} book={book} manageBooks={addBook}/>
         )
       })}
 

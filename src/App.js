@@ -7,13 +7,10 @@ class App extends React.Component {
 
   state = {
     books: [],
-    allBooks: false
+    allBooks: false, 
+    myBooks: [],
   }
   
-// allBooks = () => {
-//   console.log('all books')
-// }
-
 allBooks = () => {
     this.setState({ allBooks: !this.state.allBooks })
 }
@@ -29,12 +26,20 @@ componentDidMount() {
   .then(books => this.setState({books}));
   }
 
+  addBook = (newBook) => {
+  if(!this.state.myBooks.find(book => book === newBook)){
+  this.setState({myBooks: [...this.state.myBooks, newBook]})}
+}
+
+removeBooks = (deletedBook) => {
+  this.setState({myBooks: this.state.myBooks.filter(Book => Book !== deletedBook)})
+}
+
+
 
   render() 
     { 
   return (
-
-
     <div>
  <h1> BOOK CLUB </h1>
 <img alt= '' src={window.location.origin + '/book.jpg' } />
@@ -43,7 +48,9 @@ componentDidMount() {
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.myBooks}> My Books  </button>
 
-{this.state.allBooks && <BookContainer  books={this.state.books} />}
+{this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} />}
+
+
     </div>
     )}
 
