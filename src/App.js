@@ -18,7 +18,9 @@ myBooks = () => {
 
 
 componentDidMount() {
-    
+   fetch('https://anapioficeandfire.com/api/books')
+  .then(resp => resp.json())
+  .then(books => this.setState({books}));
   }
 
 
