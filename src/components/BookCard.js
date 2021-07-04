@@ -17,18 +17,6 @@ handleClick (e) {
     return (
       <div  onClick={() => this.props.manageBooks(this.props.book)}>
         <h2>{this.props.book.name}</h2>
-        {/* <img
-          src={this.props.toy.image}
-          alt={this.props.toy.name}
-          className="toy-avatar"
-        />
-        <p>{this.props.toy.likes} Likes </p>
-        <button className="like-btn" onClick={this.handleClick}>
-          Like {"<3"}
-        </button>
-        <button className="del-btn" onClick={this.handleClick}>
-          Donate to GoodWill
-        </button> */}
       </div>
     );
   }

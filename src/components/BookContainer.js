@@ -12,6 +12,7 @@ const BookContainer = ({books, addBook}) => {
 	<BookCard key={toy.id} toy={toy}/>
         )
       })} */}
+      <h1>All Books</h1>
     {books.map(book => {
 		return ( 
 	<BookCard key={book.id} book={book} manageBooks={addBook}/>

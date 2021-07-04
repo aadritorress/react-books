@@ -2,6 +2,7 @@
 import './App.css';
 import React from 'react'
 import BookContainer from './components/BookContainer'
+import MyBooks from './components/MyBooks';
 
 class App extends React.Component {
 
@@ -9,11 +10,15 @@ class App extends React.Component {
     books: [],
     allBooks: false, 
     myBooks: [],
-    
+    displayMyBooks: false, 
   }
   
 allBooks = () => {
-    this.setState({ allBooks: !this.state.allBooks })
+  this.setState({ allBooks: !this.state.allBooks })
+}
+
+displayMyBooks = () => {
+  this.setState({ displayMyBooks: !this.state.displayMyBooks })
 }
 
 myBooks = () => {
@@ -36,8 +41,6 @@ removeBooks = (deletedBook) => {
   this.setState({myBooks: this.state.myBooks.filter(Book => Book !== deletedBook)})
 }
 
-
-
   render() 
     { 
   return (
@@ -47,9 +50,10 @@ removeBooks = (deletedBook) => {
  <br></br>
  <br></br>
 <button onClick={this.allBooks}> All Books </button>
-<button onClick={this.myBooks}> My Books  </button>
+<button onClick={this.displayMyBooks}> My Books  </button>
 
 {this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} />}
+{this.state.displayMyBooks && <MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />}
 
 
     </div>

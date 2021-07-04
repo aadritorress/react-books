@@ -6,11 +6,11 @@ class MyBooks extends Component {
   render() {
     return (
       <div>
-        <h2>My Books</h2>
+        <h1>My Books</h1>
           {
-            //render your portfolio stocks here
-            this.props.books.map( book => <BookCard key ={book.id} book={book} managebooks={this.props.removeBooks}/>)
+            this.props.myBooks.map(book => <BookCard key={book.id} book={book} manageBooks={this.props.removeBooks}/>)
           }
+          {/* <h2>{this.props.book.name}</h2> */}
       </div>
     );
   }
