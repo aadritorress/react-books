@@ -1,15 +1,21 @@
 // import book from '/public';
 import './App.css';
 import React from 'react'
+import BookContainer from './components/BookContainer'
 
 class App extends React.Component {
 
   state = {
-    books: []
+    books: [],
+    allBooks: false
   }
   
+// allBooks = () => {
+//   console.log('all books')
+// }
+
 allBooks = () => {
-  console.log('all books')
+    this.setState({ allBooks: !this.state.allBooks })
 }
 
 myBooks = () => {
@@ -25,9 +31,6 @@ componentDidMount() {
 
 
   render() 
-
-
-
     { 
   return (
 
@@ -39,6 +42,8 @@ componentDidMount() {
  <br></br>
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.myBooks}> My Books  </button>
+
+{this.state.allBooks && <BookContainer  books={this.state.books} />}
     </div>
     )}
 
