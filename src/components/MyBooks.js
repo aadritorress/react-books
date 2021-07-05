@@ -5,12 +5,14 @@ class MyBooks extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
+      <div className="second">
         <h1>My Books</h1>
-          {
+          {  
             this.props.myBooks.map(book => <BookCard key={book.id} book={book} manageBooks={this.props.removeBooks}/>)
           }
           {/* <h2>{this.props.book.name}</h2> */}
+      </div>
       </div>
     );
   }

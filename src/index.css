@@ -14,13 +14,48 @@ code {
     monospace;
 }
 
-
-
-
 button {
   background-color: white;
   color:black; 
   height: 60px;
   margin: 2%;
-  cursor: pointer;;
+  cursor: pointer;
+}
+
+h2 {
+  cursor: pointer;
+}
+
+
+.allbooks {
+background-color: rgb(252, 252, 252);
+ text-align: right;
+}
+
+
+.mybooks {
+background-color: rgb(255, 255, 255);
+ text-align: left;
+}
+
+.wrapper {
+    display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: flex-start
+}
+
+.first {
+   width: 300px;
+    float:left; /* add this */
+    border: 1px solid rgb(255, 255, 255);
+    flex: 0 115 22%;
+    margin-left: 350px;
+}
+.second {
+    width: 300px;
+    float:left; /* add this */
+    border: 1px solid rgb(255, 255, 255);
+    flex: 0 115 22%;
+    margin-left: 700px;
 }

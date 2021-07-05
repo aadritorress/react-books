@@ -52,10 +52,11 @@ removeBooks = (deletedBook) => {
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
 
-{this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} />}
-{this.state.displayMyBooks && <MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />}
+{/* {this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} />}
+{this.state.displayMyBooks && <MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />} */}
 
-
+<BookContainer addBook={this.addBook}  books={this.state.books} />
+<MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />
     </div>
     )}
 

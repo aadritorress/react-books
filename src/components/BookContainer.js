@@ -2,9 +2,10 @@ import React from 'react';
 import BookCard from './BookCard'
 
 const BookContainer = ({books, addBook}) => {
- 
+   
   return(
-    <div >
+    <div className="wrapper">
+    <div className="first" >
       {/* Render the collection of BookCards */}
       {/* map array of books  */}
     {/* {toys.map(toy => {
@@ -19,6 +20,7 @@ const BookContainer = ({books, addBook}) => {
         )
       })}
 
+    </div>
     </div>
   );
 }
