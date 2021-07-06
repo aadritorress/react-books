@@ -4,7 +4,7 @@ import BookCard from './BookCard'
 const BookContainer = ({books, addBook}) => {
    
   return(
-    <div className="wrapper">
+    <div >
     <div className="first" >
       {/* Render the collection of BookCards */}
       {/* map array of books  */}

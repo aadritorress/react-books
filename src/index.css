@@ -22,7 +22,11 @@ button {
   cursor: pointer;
 }
 
-h2 {
+.favorite-button {
+  background-color: white;
+  color:black; 
+  height: 20px;
+  margin: 2%;
   cursor: pointer;
 }
 
@@ -38,24 +42,24 @@ background-color: rgb(255, 255, 255);
  text-align: left;
 }
 
-.wrapper {
+/* .wrapper {
     display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
    align-items: flex-start
-}
+} */
 
 .first {
    width: 300px;
     float:left; /* add this */
     border: 1px solid rgb(255, 255, 255);
     flex: 0 115 22%;
-    margin-left: 350px;
+    margin-left: 460px;
 }
 .second {
     width: 300px;
     float:left; /* add this */
     border: 1px solid rgb(255, 255, 255);
     flex: 0 115 22%;
-    margin-left: 700px;
+    margin-left: 460px;
 }
