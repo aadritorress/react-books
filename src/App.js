@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react'
 import BookContainer from './components/BookContainer'
 import MyBooks from './components/MyBooks';
+import BookForm from './components/BookForm';
 
 class App extends React.Component {
 
@@ -26,13 +27,33 @@ myBooks = () => {
 }
 
 
+  bookSubmit = (e) => {
+    e.preventDefault()
+
+    let newBook = { name: e.target.name.value }
+    console.log(newBook)
+
+    fetch("http://localhost:3000/books", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(newBook)
+    })
+      .then(resp => resp.json())
+      .then(bookCreated => this.setState({ books: [...this.state.books, bookCreated] })
+      )
+    e.target.reset();
+  }
+
 componentDidMount() {
-   fetch('https://anapioficeandfire.com/api/books')
+   fetch('http://localhost:3000/books')
   .then(resp => resp.json())
   .then(books => this.setState({books}));
   }
 
-  addBook = (newBook) => {
+addBook = (newBook) => {
   if(!this.state.myBooks.find(book => book === newBook)){
   this.setState({myBooks: [...this.state.myBooks, newBook]})}
 }
@@ -49,6 +70,7 @@ removeBooks = (deletedBook) => {
 <img alt= '' src={window.location.origin + '/book.jpg' } />
  <br></br>
  <br></br>
+<BookForm bookSubmit={this.bookSubmit}/>
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
 
