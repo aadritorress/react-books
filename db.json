@@ -7,22 +7,10 @@
       "likes": 5
     },
     {
-      "id": 2,
-      "name": "The Great Gatsby",
-      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
-    },
-    {
       "id": 3,
       "name": "One Hundred Years of Solitude",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
       "likes": 3
-    },
-    {
-      "id": 4,
-      "name": "A Passage to India",
-      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": 4
     },
     {
       "id": 5,
@@ -51,14 +39,6 @@
     {
       "name": "Harry Potter",
       "id": 9
-    },
-    {
-      "name": "Narnia",
-      "id": 10
-    },
-    {
-      "name": "Eat, Pray & love ",
-      "id": 11
     }
   ]
 }

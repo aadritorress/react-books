@@ -47,6 +47,16 @@ myBooks = () => {
     e.target.reset();
   }
 
+    bookDelete = (book) => {
+      console.log(book)
+    fetch(`http://localhost:3000/books/${book.id}`,{
+      method: 'DELETE'
+    })
+    this.setState({
+      book: this.state.books.filter((obj) => {return obj !== book})
+    })
+  }
+
 componentDidMount() {
    fetch('http://localhost:3000/books')
   .then(resp => resp.json())
@@ -70,11 +80,11 @@ removeBooks = (deletedBook) => {
 <img alt= '' src={window.location.origin + '/book.jpg' } />
  <br></br>
  <br></br>
-<BookForm bookSubmit={this.bookSubmit}/>
+<BookForm bookSubmit={this.bookSubmit} />
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
 
-{this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} />}
+{this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} bookDelete={this.bookDelete}/>}
 {this.state.displayMyBooks && <MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />}
     </div>
     )}
