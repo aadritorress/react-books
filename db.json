@@ -1,14 +1,8 @@
 {
   "books": [
     {
-      "id": 1,
-      "name": "To Kill a Mockingbird",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
-    },
-    {
       "id": 3,
-      "name": "One Hundred Years of Solitude",
+      "name": "One hundred Days",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
       "likes": 3
     },

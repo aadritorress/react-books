@@ -9,6 +9,7 @@ class App extends React.Component {
 
   state = {
     books: [],
+    book: {},
     allBooks: false, 
     myBooks: [],
     displayMyBooks: false, 
@@ -48,26 +49,44 @@ myBooks = () => {
     e.target.reset();
   }
 
-    updateBook = () => {
-
-    }
-
     bookEdit = (book) => {
     console.log(book)
-      if (book.id) {
-        fetch(`http://localhost:3000/books/${book.id}`, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-      'accept': 'application/json'
+    this.setState({book: book})
     }
-  })
-  .then(res => res.json())
-  .then(bookInfo => {
-    this.setState({book: bookInfo, showEditForm: true})
-      }) 
-      }
+
+    changeName = (e) => {
+    const bookName = e.target.value 
+    this.setState(bookBefore => {
+    return {book: {...bookBefore.book, name: bookName}}
+    })
     }
+
+    updateBook = () => {
+  // console.log('submitted', pizzaSelected)
+  if (this.state.book.id) {
+    const bookId = this.state.book.id
+    fetch(`http://localhost:3000/books/${bookId}`, {
+      method: "PATCH", 
+      headers: {
+        'content-type':'application/json',
+        'accept': 'application/json'
+      },
+      body: JSON.stringify(this.state.book)
+    })
+    .then(resp => resp.json())
+    .then(updatedbook => {
+      const newbook = this.state.books.map(book => 
+        {
+        if(book.id === bookId) {
+          return updatedbook
+        } else {
+          return book 
+        }
+      })
+      this.setState({books: newbook, displayMyBooks: true})
+    })
+  }
+}
 
     bookDelete = (book) => {
       console.log(book)
@@ -102,7 +121,7 @@ removeBooks = (deletedBook) => {
 <img alt= '' src={window.location.origin + '/book.jpg' } />
  <br></br>
  <br></br>
-<BookForm bookSubmit={this.bookSubmit} />
+<BookForm book={this.state.book} bookSubmit={this.bookSubmit} bookEdit={this.bookEdit} updateBook={this.updateBook} changeName={this.changeName}/>
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
 
