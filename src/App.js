@@ -117,8 +117,8 @@ removeBooks = (deletedBook) => {
     { 
   return (
     <div>
- <h1> BOOK CLUB </h1>
-<img alt= '' src={window.location.origin + '/book.jpg' } />
+ <h1 className="title"> BOOK CLUB </h1>
+{/* <img alt= '' src={window.location.origin + '/book.jpg' } /> */}
  <br></br>
  <br></br>
 <BookForm book={this.state.book} bookSubmit={this.bookSubmit} bookEdit={this.bookEdit} updateBook={this.updateBook} changeName={this.changeName}/>

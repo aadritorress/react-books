@@ -7,7 +7,7 @@ class MyBooks extends Component {
     return (
       <div >
       <div className="second">
-        <h1>My Favorite Books</h1>
+        <h1 className="books">My Favorite Books</h1>
           {  
             this.props.myBooks.map(book => <BookCard key={book.id} book={book} manageBooks={this.props.removeBooks}/>)
           }

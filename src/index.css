@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Sigmar+One&display=swap');
 
 body {
+  background: url('https://wallpaperaccess.com/full/5697140.jpg');
+  background-size: cover;
   margin: 0;
   font-family: 'Big Shoulders Stencil Display', cursive;
   -webkit-font-smoothing: antialiased;
@@ -14,8 +17,43 @@ code {
     monospace;
 }
 
+.title {
+  margin-top: 110px;
+  color: rgb(255, 255, 255);
+  height: 100px;
+  border-radius: 10px;
+  background: rgb(20, 10, 10);
+  font-size: 5rem;
+}
+
+.add-edit {
+  margin-left: 45%;
+  color: rgb(255, 255, 255);
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  background: rgb(20, 10, 10);
+  text-align: center;
+}
+
+.books{
+  margin-left: 45%;
+  color: rgb(255, 255, 255);
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  background: rgb(210, 214, 174);
+  text-align: center;
+}
+
+input {
+  border-radius: 10px;
+  height: 25px;
+  width: 150x;
+}
+
 button {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color:black; 
   height: 60px;
   margin: 2%;
@@ -50,14 +88,14 @@ background-color: rgb(255, 255, 255);
 } */
 
 .first {
-   width: 300px;
+   width: 400px;
     float:left; /* add this */
     border: 1px solid rgb(255, 255, 255);
     flex: 0 115 22%;
     margin-left: 460px;
 }
 .second {
-    width: 300px;
+    width: 400px;
     float:left; /* add this */
     border: 1px solid rgb(255, 255, 255);
     flex: 0 115 22%;

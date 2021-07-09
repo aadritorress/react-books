@@ -7,7 +7,7 @@ render () {
     return (
 <div>
         <div>
-            <h2>Add a new Book to the collection</h2>
+            <h2 className="add-edit">Add a new Book to the collection</h2>
 <form onSubmit={this.props.bookSubmit}>
 <input type="text" name="name" placeholder="name"></input>
 <button className="favorite-button" type="submit"> send </button>
@@ -15,7 +15,7 @@ render () {
 </form>
         </div>
         <div>
-            <h2>Edit the Book Info</h2>
+            <h2 className="add-edit">Edit the Book Info</h2>
 <form onSubmit={this.props.updateBook}>
 <input type="text" name="name" placeholder="name" onChange={this.props.changeName}  value={this.props.book.name}></input>
 <button className="favorite-button" type="submit"> edit </button>
