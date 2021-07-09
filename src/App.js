@@ -13,7 +13,7 @@ class App extends React.Component {
     allBooks: false, 
     myBooks: [],
     displayMyBooks: false, 
-    showEditForm: false
+    displayForms: false
   }
   
 allBooks = () => {
@@ -24,10 +24,9 @@ displayMyBooks = () => {
   this.setState({ displayMyBooks: !this.state.displayMyBooks })
 }
 
-myBooks = () => {
-  console.log('my books')
+displayForms = () => {
+  this.setState({ displayForms: !this.state.displayForms})
 }
-
 
   bookSubmit = (e) => {
     e.preventDefault()
@@ -88,15 +87,15 @@ myBooks = () => {
   }
 }
 
-    bookDelete = (book) => {
-      console.log(book)
-    fetch(`http://localhost:3000/books/${book.id}`,{
-      method: 'DELETE'
-    })
-    this.setState({
-      book: this.state.books.filter((obj) => {return obj !== book})
-    })
-  }
+bookDelete = (book) => {
+console.log(book)
+fetch(`http://localhost:3000/books/${book.id}`,{
+ method: 'DELETE'
+})
+this.setState({
+book: this.state.books.filter((obj) => {return obj !== book})
+})
+}
 
 componentDidMount() {
    fetch('http://localhost:3000/books')
@@ -121,7 +120,11 @@ removeBooks = (deletedBook) => {
 {/* <img alt= '' src={window.location.origin + '/book.jpg' } /> */}
  <br></br>
  <br></br>
-<BookForm book={this.state.book} bookSubmit={this.bookSubmit} bookEdit={this.bookEdit} updateBook={this.updateBook} changeName={this.changeName}/>
+ <button onClick={this.displayForms}>Add or Edit Books </button>
+{this.state.displayForms && <BookForm book={this.state.book} bookSubmit={this.bookSubmit} bookEdit={this.bookEdit} updateBook={this.updateBook} changeName={this.changeName}/>}
+
+<br></br>
+<br></br>
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
 

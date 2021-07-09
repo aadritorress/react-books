@@ -16,7 +16,7 @@ handleClick (e) {
 
     return (
       <div >
-        <h2>{this.props.book.name}</h2>
+        <h2 className="book-name">{this.props.book.name}</h2>
 
     
         <button onClick={() => this.props.manageBooks(this.props.book)} className="favorite-button"> click here to add or remove book </button>
