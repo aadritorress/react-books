@@ -12,6 +12,7 @@ class App extends React.Component {
     allBooks: false, 
     myBooks: [],
     displayMyBooks: false, 
+    showEditForm: false
   }
   
 allBooks = () => {
@@ -46,6 +47,27 @@ myBooks = () => {
       )
     e.target.reset();
   }
+
+    updateBook = () => {
+
+    }
+
+    bookEdit = (book) => {
+    console.log(book)
+      if (book.id) {
+        fetch(`http://localhost:3000/books/${book.id}`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+      'accept': 'application/json'
+    }
+  })
+  .then(res => res.json())
+  .then(bookInfo => {
+    this.setState({book: bookInfo, showEditForm: true})
+      }) 
+      }
+    }
 
     bookDelete = (book) => {
       console.log(book)
@@ -84,7 +106,7 @@ removeBooks = (deletedBook) => {
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
 
-{this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} bookDelete={this.bookDelete}/>}
+{this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} bookDelete={this.bookDelete} bookEdit={this.bookEdit}/>}
 {this.state.displayMyBooks && <MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />}
     </div>
     )}
