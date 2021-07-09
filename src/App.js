@@ -120,14 +120,12 @@ removeBooks = (deletedBook) => {
 {/* <img alt= '' src={window.location.origin + '/book.jpg' } /> */}
  <br></br>
  <br></br>
- <button onClick={this.displayForms}>Add or Edit Books </button>
-{this.state.displayForms && <BookForm book={this.state.book} bookSubmit={this.bookSubmit} bookEdit={this.bookEdit} updateBook={this.updateBook} changeName={this.changeName}/>}
-
-<br></br>
-<br></br>
 <button onClick={this.allBooks}> All Books </button>
 <button onClick={this.displayMyBooks}> My Books  </button>
-
+<br></br>
+ <button onClick={this.displayForms}>Add or Edit Books </button>
+{this.state.displayForms && <BookForm book={this.state.book} bookSubmit={this.bookSubmit} bookEdit={this.bookEdit} updateBook={this.updateBook} changeName={this.changeName}/>}
+<br></br>
 {this.state.allBooks && <BookContainer addBook={this.addBook}  books={this.state.books} bookDelete={this.bookDelete} bookEdit={this.bookEdit}/>}
 {this.state.displayMyBooks && <MyBooks removeBooks={this.removeBooks} myBooks={this.state.myBooks} />}
     </div>

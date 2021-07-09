@@ -13,19 +13,17 @@ render () {
 <button className="favorite-button" type="submit"> send </button>
 <br></br>
 </form>
+<br></br>
+<br></br>
         </div>
         <div className="second">
             <h2 className="add-edit">Edit Book</h2>
 <form onSubmit={this.props.updateBook}>
 <input type="text" name="name" placeholder="name" onChange={this.props.changeName}  value={this.props.book.name}></input>
 <button className="favorite-button" type="submit"> edit </button>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
 </form>
+<br></br>
+<br></br>
         </div>
         </div>
     )
