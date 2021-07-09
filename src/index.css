@@ -37,12 +37,12 @@ code {
 }
 
 .books{
-  margin-left: 45%;
+  margin-left: 25%;
   color: rgb(255, 255, 255);
   height: 35px;
   width: 200px;
   border-radius: 10px;
-  background: rgb(210, 214, 174);
+  background: rgb(20, 10, 10);
   text-align: center;
 }
 
@@ -53,15 +53,16 @@ input {
 }
 
 button {
-  background-color: rgb(255, 255, 255);
-  color:black; 
-  height: 60px;
+  background-color: rgb(20, 10, 10);
+  color:rgb(255, 255, 255); 
+  height: 30px;
   margin: 2%;
+  border-radius: 20px;
   cursor: pointer;
 }
 
 .favorite-button {
-  background-color: white;
+  background-color: rgb(235, 234, 191);
   color:black; 
   height: 20px;
   margin: 2%;
@@ -80,23 +81,17 @@ background-color: rgb(255, 255, 255);
  text-align: left;
 }
 
-/* .wrapper {
-    display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   align-items: flex-start
-} */
-
 .first {
-   width: 400px;
-    float:left; /* add this */
+   width: 360px;
+    float:left;
     border: 1px solid rgb(255, 255, 255);
     flex: 0 115 22%;
     margin-left: 460px;
+    text-align: center;
 }
 .second {
-    width: 400px;
-    float:left; /* add this */
+    width: 360px;
+    float:left; 
     border: 1px solid rgb(255, 255, 255);
     flex: 0 115 22%;
     margin-left: 460px;
